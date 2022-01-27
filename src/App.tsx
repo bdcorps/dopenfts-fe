@@ -8,11 +8,12 @@ import Header from "./pages/header";
 
 export const App = () => {
   return (
+    //Leaving the routes to the specific components for now - will change
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Voting />} />
-        <Route path="leaderboard" element={<Leaderboard />} />
-        <Route path="header" element={<Header />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/header" element={<Header />} />
       </Routes>
     </BrowserRouter>
   );
