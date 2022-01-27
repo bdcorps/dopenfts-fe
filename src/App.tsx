@@ -5,6 +5,8 @@ import "./App.css";
 import Voting from "./pages/voting";
 import Leaderboard from "./pages/leaderboard";
 
+//Test Comment
+
 export const App = () => {
   return (
     <BrowserRouter>
