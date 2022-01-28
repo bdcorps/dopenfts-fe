@@ -2,17 +2,21 @@ import { FunctionComponent } from "react";
 import "./../../index.css";
 import Header from "./../header/index";
 
-interface versusProps {}
+interface versusProps {
+  link: string;
+}
 
-const Versus: FunctionComponent<versusProps> = () => {
+const Versus: FunctionComponent<versusProps> = (props) => {
   return (
     <div className="bg-primary">
       <Header></Header>
-      <div className="grid-asym-3 font-bold just-cont-end">
+      <div className="grid-asym-3 font-bold just-cont-end font-color-secondary py-3">
         <div className="grid-col-span-2 text-end fs-2 align-item-bot line-height-a">
           VOTE
         </div>
-        <div className="fs-5 d-flex align-item-bot">{">>>Connect Wallet"}</div>
+        <div className="fs-5 d-flex align-item-bot">
+          <a href={props.link}>{">>>Connect Wallet"}</a>
+        </div>
         <div className="text-end fs-3 d-flex align-item-top line-height-a">
           ON
         </div>
