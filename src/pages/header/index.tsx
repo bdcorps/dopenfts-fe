@@ -7,12 +7,12 @@ interface headerProps {}
 
 const Header: FunctionComponent<headerProps> = () => {
   return (
-    <div className="d-flex bg-primary just-cont-sb">
+    <div className="d-flex bg-primary just-cont-sb py-6">
       <div className="logo-container">
-        <img src={logo_primary} className="logo-image-primary"></img>
+        <img src={logo_primary} className="logo-image-primary ps-6"></img>
       </div>
       <div className="logo-container">
-        <img src={logo_secondary} className="logo-image-secondary"></img>
+        <img src={logo_secondary} className="logo-image-secondary pe-6"></img>
       </div>
     </div>
   );

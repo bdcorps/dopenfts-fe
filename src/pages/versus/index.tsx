@@ -8,7 +8,7 @@ const Versus: FunctionComponent<versusProps> = () => {
   return (
     <div className="bg-primary">
       <Header></Header>
-      <div className="grid-asym-3 font-bold just-cont-end">
+      <div className="grid-asym-3 font-bold just-cont-end font-color-secondary py-3">
         <div className="grid-col-span-2 text-end fs-2 align-item-bot line-height-a">
           VOTE
         </div>
