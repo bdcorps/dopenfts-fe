@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  color: #2c2e35;
+}
+
 * {
   font-family: "Changa", sans-serif;
   font-weight: 800;

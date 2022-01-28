@@ -12,7 +12,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Voting />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
-        <Route path="/versus" element={<Versus />} />
+        <Route path="/versus" element={<Versus link="/versus" />} />
       </Routes>
     </BrowserRouter>
   );
