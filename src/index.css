@@ -1,13 +1,122 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* General CSS Properties */
+.bg-primary {
+  background-color: #ffe601;
+}
+
+.bg-grid {
+  background: repeating-conic-gradient(#ffffff 0% 25%, #000000 0% 50%) 50% /
+    20px 20px;
+}
+
+.just-cont-sb {
+  justify-content: space-between;
+}
+
+.just-cont-center {
+  justify-content: center;
+}
+
+.just-cont-end {
+  justify-content: end;
+}
+
+.align-item-bot {
+  align-items: flex-end;
+}
+
+.align-item-top {
+  align-items: flex-start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.font-bold {
+  font-weight: 900;
+}
+
+.width-a {
+  width: auto;
+}
+
+.fs-1 {
+  font-size: 6rem;
+}
+
+.fs-2 {
+  font-size: 5rem;
+}
+
+.fs-3 {
+  font-size: 4rem;
+}
+
+.fs-4 {
+  font-size: 3rem;
+}
+
+.fs-5 {
+  font-size: 2rem;
+}
+
+.line-height-a {
+  line-height: 90%;
+}
+
+/* More Specific CSS */
+
+.logo-container {
+  display: inherit;
+  align-items: center;
+}
+
+.logo-image-primary {
+  height: 13vw;
+  width: auto;
+  min-height: 64px;
+}
+
+.logo-image-secondary {
+  height: 8vw;
+}
+
+.grid-asym-3 {
+  display: grid;
+  grid-template-columns: repeat(2, max-content) 50vw;
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.grid-row-span-2 {
+  grid-row: span 2;
+}
+
+.vert-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.col-start-3 {
+  grid-column-start: 3;
 }
