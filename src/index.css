@@ -93,6 +93,27 @@ a {
   font-size: 2rem;
 }
 
+.my-1 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.my-2 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.my-3 {
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+}
+.my-4 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.my-5 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .py-1 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -157,6 +178,39 @@ a {
   grid-template-columns: repeat(2, max-content) 50vw;
 }
 
+.grid-sym-5 {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 50vw;
+  justify-items: center;
+}
+
+.versus-image-container-1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.versus-image-container-2 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.versus-image {
+  width: 250px;
+  height: auto;
+  display: flex;
+}
+
+.versus-text {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+}
+
 .grid-col-span-2 {
   grid-column: span 2;
 }
@@ -172,4 +226,9 @@ a {
 
 .col-start-3 {
   grid-column-start: 3;
+}
+
+.partial-seperator-left {
+  width: 80vw;
+  height: 5rem;
 }
