@@ -203,6 +203,7 @@ a {
   width: 250px;
   height: auto;
   display: flex;
+  transition: 1s all ease;
 }
 
 .versus-text {
