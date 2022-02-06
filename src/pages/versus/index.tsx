@@ -1,31 +1,63 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 import "./../../index.css";
-import Header from "./../header/index";
+import Header from "./../header";
+import SubHeader from "./../subheader";
+import "animate.css";
 
 interface versusProps {
-  link: string;
+  imageOneLink: string;
+  imageTwoLink: string;
 }
 
 const Versus: FunctionComponent<versusProps> = (props) => {
+  const [loadAniLeft, setloadAniLeft] = useState(true);
+  const [shakeLeft, setShakeLeft] = useState(false);
+  const [loadAniRight, setloadAniRight] = useState(true);
+  const [shakeRight, setShakeRight] = useState(false);
+
+  const animationEnded = () => {
+    setloadAniLeft(false);
+    setShakeLeft(false);
+    setloadAniRight(false);
+    setShakeRight(false);
+  };
+
+  const mouseClickedLeft = () => {
+    setShakeLeft(true);
+  };
+
+  const mouseClickedRight = () => {
+    setShakeRight(true);
+  };
+
   return (
     <div className="bg-primary">
-      <Header></Header>
-      <div className="grid-asym-3 font-bold just-cont-end font-color-secondary py-3">
-        <div className="grid-col-span-2 text-end fs-2 align-item-bot line-height-a">
-          VOTE
-        </div>
-        <div className="fs-5 d-flex align-item-bot">
-          <a href={props.link}>{">>>Connect Wallet"}</a>
-        </div>
-        <div className="text-end fs-3 d-flex align-item-top line-height-a">
-          ON
-        </div>
-        <div className="grid-row-span-2 vert-text width-a fs-1 line-height-a">
-          NFTS
-        </div>
-        <div className="bg-grid"></div>
-        <div className="fs-2 col-start-3 align-item-top line-height-a">
-          GET RATED
+      <Header />
+      <SubHeader link="" />
+      <div className="d-flex bg-grid partial-seperator-left my-5"></div>
+      <div className="d-flex just-cont-center py-2">
+        <div className="grid-sym-5">
+          <div className="versus-image-container-1">
+            <img
+              src={props.imageOneLink}
+              className={`versus-image animate__animated ${
+                loadAniLeft ? "animate__slideInLeft " : ""
+              } ${shakeLeft ? "animate__wobble" : ""}`}
+              onAnimationEnd={animationEnded}
+              onClick={mouseClickedLeft}
+            ></img>
+          </div>
+          <div className="versus-text fs-1 font-color-secondary">VS!</div>
+          <div className="versus-image-container-2">
+            <img
+              src={props.imageTwoLink}
+              className={`versus-image animate__animated ${
+                loadAniRight ? "animate__slideInRight " : ""
+              } ${shakeRight ? "animate__wobble" : ""}`}
+              onAnimationEnd={animationEnded}
+              onClick={mouseClickedRight}
+            ></img>
+          </div>
         </div>
       </div>
     </div>
