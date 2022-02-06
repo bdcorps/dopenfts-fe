@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
 import Voting from "./pages/voting";
 import Leaderboard from "./pages/leaderboard";
 import Versus from "./pages/versus";
+import NFT1 from "./pages/versus/images/placeholderApe1.png";
+import NFT2 from "./pages/versus/images/placeholderApe2.png";
 
 export const App = () => {
   return (
@@ -14,12 +14,7 @@ export const App = () => {
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route
           path="/versus"
-          element={
-            <Versus
-              imageOneLink="https://via.placeholder.com/250"
-              imageTwoLink="https://via.placeholder.com/250"
-            />
-          }
+          element={<Versus imageOneLink={NFT1} imageTwoLink={NFT2} />}
         />
       </Routes>
     </BrowserRouter>
