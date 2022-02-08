@@ -181,8 +181,8 @@ a {
 .grid-sym-5 {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  width: 50vw;
   justify-items: center;
+  gap: 3rem;
 }
 
 .versus-image-container-1 {
@@ -232,4 +232,20 @@ a {
 .partial-seperator-left {
   width: 80vw;
   height: 5rem;
+}
+
+.leaderboard-table {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.leaderboard-table th {
+  background-color: #ffffff;
+  border: 1px solid black;
+  font-weight: normal;
+}
+
+.leaderboard-table td {
+  font-weight: normal;
+  border-top: 1px solid black;
 }

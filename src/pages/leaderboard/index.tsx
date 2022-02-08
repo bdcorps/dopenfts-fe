@@ -1,18 +1,69 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useMemo } from "react";
+import Header from "../header";
+import { useTable, useSortBy } from "react-table";
+import mock_data from "./mock_data.json";
+import { COLUMNS } from "./columns";
 
 interface LeaderboardProps {}
 
 const Leaderboard: FunctionComponent<LeaderboardProps> = () => {
-  const artworks = [
-    { name: "nft1", image: "https://google.com", likes: 2 },
-    { name: "nft5", image: "https://google.com", likes: 71 },
-    { name: "nft2", image: "https://google.com", likes: 21 },
-    { name: "nft4", image: "https://google.com", likes: 61 },
-    { name: "nft5", image: "https://google.com", likes: 71 },
-    { name: "nft3", image: "https://google.com", likes: 41 },
-  ];
+  const columns = useMemo(() => COLUMNS, []);
+  const data = useMemo(() => mock_data, []);
 
-  return <div>table here</div>;
+  const tableInstance = useTable(
+    {
+      columns,
+      data,
+      initialState: {
+        sortBy: [
+          {
+            id: "likes",
+            desc: true,
+          },
+        ],
+      },
+    },
+    useSortBy
+  );
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
+
+  return (
+    <div className="bg-primary">
+      <Header />
+      <div className="d-flex bg-grid partial-seperator-left my-5"></div>
+      <div className="d-flex just-cont-center">
+        <table className="leaderboard-table" {...getTableBodyProps()}>
+          <thead>
+            {headerGroups.map((headerGroup: any) => (
+              <tr {...headerGroup.getHeaderGroupProps}>
+                {headerGroup.headers.map((column: any) => (
+                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                    {column.render("Header")}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row: any) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell: any) => {
+                    return (
+                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default Leaderboard;
