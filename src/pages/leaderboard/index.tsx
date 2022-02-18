@@ -1,4 +1,4 @@
-import { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import Header from "../header";
 import { useTable, useSortBy } from "react-table";
 import mock_data from "./mock_data.json";
@@ -7,10 +7,10 @@ import { COLUMNS } from "./columns";
 interface LeaderboardProps {}
 
 const Leaderboard: FunctionComponent<LeaderboardProps> = () => {
-  const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => mock_data, []);
+  const columns: any = useMemo(() => COLUMNS, []);
+  const data: any = useMemo(() => mock_data, []);
 
-  const tableInstance = useTable(
+  const tableInstance: any = useTable(
     {
       columns,
       data,

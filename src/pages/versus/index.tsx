@@ -1,4 +1,4 @@
-import { FunctionComponent, useState, useEffect } from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import "./../../index.css";
 import Header from "./../header";
 import SubHeader from "./../subheader";

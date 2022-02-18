@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Voting from "./pages/voting";
 import Leaderboard from "./pages/leaderboard";
