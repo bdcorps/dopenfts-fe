@@ -7,7 +7,7 @@ import { COLUMNS } from "./columns";
 interface LeaderboardProps {}
 
 const Leaderboard: FunctionComponent<LeaderboardProps> = () => {
-  const columns = useMemo(() => COLUMNS, []);
+  const columns: any = useMemo(() => COLUMNS, []);
   const data = useMemo(() => mock_data, []);
 
   const tableInstance = useTable(
