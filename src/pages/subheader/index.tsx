@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import "./../../index.css";
 import Header from "../header/index";
 
