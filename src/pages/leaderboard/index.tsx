@@ -14,20 +14,11 @@ const Leaderboard: FunctionComponent<LeaderboardProps> = () => {
     {
       columns,
       data,
-      initialState: {
-        sortBy: [
-          {
-            id: "likes",
-            desc: true,
-          },
-        ],
-      },
     },
     useSortBy
   );
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
 
   return (
     <div className="bg-primary">
@@ -39,9 +30,7 @@ const Leaderboard: FunctionComponent<LeaderboardProps> = () => {
             {headerGroups.map((headerGroup: any) => (
               <tr {...headerGroup.getHeaderGroupProps}>
                 {headerGroup.headers.map((column: any) => (
-                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                    {column.render("Header")}
-                  </th>
+                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render("Header")}</th>
                 ))}
               </tr>
             ))}
@@ -52,9 +41,7 @@ const Leaderboard: FunctionComponent<LeaderboardProps> = () => {
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell: any) => {
-                    return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                    );
+                    return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
                   })}
                 </tr>
               );
