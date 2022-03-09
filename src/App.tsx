@@ -10,12 +10,11 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Voting />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
         <Route
-          path="/versus"
+          path="/"
           element={<Versus imageOneLink={NFT1} imageTwoLink={NFT2} />}
         />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </BrowserRouter>
   );
